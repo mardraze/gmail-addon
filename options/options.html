@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini for Gmail</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1 data-i18n="optTitle"></h1>
+
+    <section class="notice" aria-labelledby="priv">
+      <h2 id="priv" data-i18n="optPrivacyTitle"></h2>
+      <p data-i18n="optPrivacy"></p>
+    </section>
+
+    <form id="form" autocomplete="off">
+      <div class="field">
+        <label for="apiKey" data-i18n="optApiKey"></label>
+        <div class="inline">
+          <input id="apiKey" type="password" spellcheck="false" autocomplete="off">
+          <button type="button" id="toggleKey" data-i18n="show"></button>
+          <button type="button" id="test" data-i18n="testConnection"></button>
+        </div>
+        <small data-i18n="optApiKeyHelp"></small>
+      </div>
+
+      <div class="field">
+        <label for="model" data-i18n="optModel"></label>
+        <select id="model">
+          <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite</option>
+          <option value="gemini-3.5-flash">gemini-3.5-flash</option>
+          <option value="gemini-3.8-flash">gemini-3.8-flash</option>
+          <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite</option>
+          <option value="__custom" data-i18n="optModelCustom"></option>
+        </select>
+        <input id="customModel" type="text" spellcheck="false" hidden data-i18n-placeholder="optModelCustomPlaceholder" aria-label="Custom model">
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="tone" data-i18n="optDefaultTone"></label>
+          <select id="tone">
+            <option value="auto" data-i18n="tone_auto"></option>
+            <option value="formal" data-i18n="tone_formal"></option>
+            <option value="neutral" data-i18n="tone_neutral"></option>
+            <option value="friendly" data-i18n="tone_friendly"></option>
+            <option value="assertive" data-i18n="tone_assertive"></option>
+            <option value="polite" data-i18n="tone_polite"></option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="language" data-i18n="optDefaultLanguage"></label>
+          <select id="language"></select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="languages" data-i18n="optLanguagesLabel"></label>
+        <textarea id="languages" rows="3"></textarea>
+        <small data-i18n="optLanguagesHelp"></small>
+      </div>
+
+      <div class="field">
+        <label for="signature" data-i18n="optSignature"></label>
+        <textarea id="signature" rows="3"></textarea>
+        <small data-i18n="optSignatureHelp"></small>
+      </div>
+
+      <div class="field">
+        <label for="systemPrompt" data-i18n="optSystem"></label>
+        <textarea id="systemPrompt" rows="3"></textarea>
+        <small data-i18n="optSystemHelp"></small>
+      </div>
+
+      <div class="field">
+        <label for="temperature"><span data-i18n="optTemperature"></span>: <output id="tempOut" for="temperature"></output></label>
+        <input id="temperature" type="range" min="0" max="2" step="0.1">
+        <small data-i18n="optTemperatureHelp"></small>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="primary" data-i18n="save"></button>
+        <button type="button" id="wipe" class="danger" data-i18n="deleteAll"></button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

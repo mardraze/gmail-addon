@@ -1,0 +1,40 @@
+.gai-host { position: relative; z-index: 2147483000; pointer-events: auto; display: inline-flex; align-items: center; margin-left: 8px; vertical-align: middle; --fg: #0b57d0; --bd: #747775; --hover: rgba(11, 87, 208, .08); }
+.gai-host[data-theme="dark"] { --fg: #a8c7fa; --bd: #8e918f; --hover: rgba(168, 199, 250, .12); }
+.gai-trigger { all: unset; position: relative; pointer-events: auto; box-sizing: border-box; cursor: pointer; height: 36px; padding: 0 16px; border: 1px solid var(--bd); border-radius: 18px; color: var(--fg); font: 500 14px/34px "Google Sans", Roboto, Arial, sans-serif; white-space: nowrap; }
+.gai-trigger:hover { background: var(--hover); }
+.gai-trigger:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+.gai-panel { --bg: #fff; --fg: #1f1f1f; --muted: #5f6368; --bd: #c4c7c5; --accent: #0b57d0; --accent-fg: #fff; --field: #f8fafd; --danger: #b3261e; --hover: #e9eef6;
+  all: initial; position: fixed; z-index: 2147483000; box-sizing: border-box; overflow: auto; padding: 14px 16px; background: var(--bg); color: var(--fg); border: 1px solid var(--bd); border-radius: 16px; box-shadow: 0 8px 28px rgba(0, 0, 0, .28); font: 400 13px/1.45 "Google Sans", Roboto, Arial, sans-serif; display: flex; flex-direction: column; gap: 8px; }
+.gai-panel[data-theme="dark"] { --bg: #2b2d30; --fg: #e3e3e3; --muted: #a9acaf; --bd: #5f6368; --accent: #a8c7fa; --accent-fg: #062e6f; --field: #1e1f22; --danger: #f2b8b5; --hover: #3a3d41; }
+.gai-panel *, .gai-panel *::before, .gai-panel *::after { box-sizing: border-box; font-family: inherit; }
+.gai-panel [hidden] { display: none !important; }
+.gai-head { display: flex; justify-content: space-between; align-items: center; font-size: 15px; }
+.gai-panel label { color: var(--muted); font-size: 12px; }
+.gai-input, .gai-select { width: 100%; padding: 8px 10px; border: 1px solid var(--bd); border-radius: 8px; background: var(--field); color: var(--fg); font-size: 13px; line-height: 1.45; }
+.gai-input { resize: vertical; }
+.gai-select { height: 34px; padding: 0 8px; }
+.gai-input:focus, .gai-select:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+.gai-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.gai-row .gai-select { flex: 1 1 140px; width: auto; }
+.gai-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gai-check { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; cursor: pointer; }
+.gai-primary, .gai-btn2, .gai-chip, .gai-x { cursor: pointer; font-size: 13px; font-weight: 500; color: var(--fg); }
+.gai-primary { padding: 7px 16px; border: 0; border-radius: 18px; background: var(--accent); color: var(--accent-fg); }
+.gai-btn2 { padding: 6px 14px; border: 1px solid var(--bd); border-radius: 18px; background: transparent; }
+.gai-chip { padding: 5px 12px; border: 1px solid var(--bd); border-radius: 14px; background: transparent; }
+.gai-x { width: 28px; height: 28px; border: 0; border-radius: 50%; background: transparent; font-size: 20px; line-height: 1; }
+.gai-btn2:hover, .gai-chip:hover, .gai-x:hover { background: var(--hover); }
+.gai-primary:hover { filter: brightness(1.1); }
+.gai-panel button:focus-visible, .gai-panel input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.gai-scope, .gai-privacy { color: var(--muted); font-size: 11.5px; }
+.gai-error { color: var(--danger); }
+.gai-detail { color: var(--muted); font-size: 11.5px; word-break: break-word; }
+.gai-link { color: var(--accent); text-decoration: underline; cursor: pointer; }
+.gai-loading { display: flex; align-items: center; gap: 10px; }
+.gai-loading .gai-btn2 { margin-left: auto; }
+.gai-spinner { width: 18px; height: 18px; border: 2px solid var(--bd); border-top-color: var(--accent); border-radius: 50%; animation: gai-spin .8s linear infinite; }
+@keyframes gai-spin { to { transform: rotate(360deg); } }
+.gai-resultbox { display: flex; flex-direction: column; gap: 6px; }
+.gai-result { min-height: 140px; white-space: pre-wrap; }
+@media (prefers-reduced-motion: reduce) { .gai-spinner { animation-duration: 3s; } }

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "1.0.0",
+  "default_locale": "pl",
+  "minimum_chrome_version": "102",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["src/selectors.js", "src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "__MSG_extName__"
+  }
+}
